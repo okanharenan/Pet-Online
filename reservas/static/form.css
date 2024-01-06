@@ -1,0 +1,19 @@
+body{
+    background-position: 60px 90px;
+}
+
+/* Estilos para telas médias e menores (ex: até 768px) */
+@media (max-width: 768px) {
+    body {
+        background-image: none; /* Remove a imagem de fundo */
+    }
+}
+
+
+/* Estilos para telas médias e menores (até 768px) */
+@media (max-width: 768px) {
+    form {
+        margin-left: 20px; /* Margem à esquerda */
+        margin-right: 20px; /* Margem à direita */
+    }
+}

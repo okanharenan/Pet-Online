@@ -1,0 +1,19 @@
+body{
+    background-image: url(img/design-de-loja-de-animais_24877-49297.avif) ;
+    background-repeat: no-repeat;
+    background-position: 100px 80px;
+    background-size: 300px;
+    backface-visibility: hidden;
+}
+
+/* Estilos para telas médias e menores (ex: até 768px) */
+@media (max-width: 768px) {
+    body {
+        background-image: none; /* Remove a imagem de fundo */
+    }
+}
+
+form{
+    margin-left: 10px;
+    margin-right: 10px;
+}
