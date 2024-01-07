@@ -8,3 +8,13 @@ class ContatoModel(models.Model):
     email = models.EmailField(verbose_name='E-mail')
     mensagem = models.TextField(verbose_name="Mensagem")
     data = models.DateTimeField(verbose_name="Data Envio", auto_now_add=True)
+    lido = models.BooleanField(verbose_name="Lido", default=True, blank=True)
+
+
+    def __str__(self):
+        return f'{self.nome} {self.telefone}'
+
+    class Meta:
+        verbose_name = 'Formulario de contato'
+        verbose_name_plural = 'Formulario de contatos'
+        ordering = ['-data']
