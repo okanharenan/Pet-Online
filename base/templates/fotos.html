@@ -1,0 +1,20 @@
+{% extends "inicio.html" %}
+{% block principal %}
+
+<!-- index.html -->
+<form action="{% url 'fotos' %}" method="POST" novalidate enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <input class="rounded mx-auto d-block" type="file" name="my_file" id="fileInput" multiple>
+    <button type="submit" class="rounded mx-auto d-block"></button>
+</form>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="{{ imagem.url }}" alt="Imagem">
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

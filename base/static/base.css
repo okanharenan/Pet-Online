@@ -1,8 +1,8 @@
 body{
-    background-image: url(img/design-de-loja-de-animais_24877-49297.avif) ;
+    background-image: url(img/vetor.jpg) ;
     background-repeat: no-repeat;
     background-position: 100px 80px;
-    background-size: 300px;
+    background-size: 100px;
     backface-visibility: hidden;
 }
 
@@ -17,3 +17,95 @@ form{
     margin-left: 10px;
     margin-right: 10px;
 }
+
+.formulario{
+    color: green;
+}
+
+.menu ul{
+    list-style: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+
+}
+
+.menu li{
+    display: inline-block;
+    background-color: #dddddd;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin: 20px;
+    transition: background-color 1s;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html, body{
+  height: 2%;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #030321;
+  font-family: Arial;
+}
+
+.container {
+  display: flex;
+/*   border:1px solid red; */
+  height: 25%;
+  align-items: center;
+}
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 300px;
+    margin: -80px auto;
+  
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #4D163D;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #840037;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: #BD0034;
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: #BD0034;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: #FDB731;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
+
