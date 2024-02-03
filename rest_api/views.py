@@ -6,6 +6,8 @@ from reservas.models import ReservaModel
 from rest_api.serializers import ReservaModelSerializer, ContatoModelSerializer
 from rest_framework.decorators import action
 from base.models import ContatoModel
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 class AgendamentoModelViewSet(ModelViewSet):
     """
@@ -13,6 +15,9 @@ class AgendamentoModelViewSet(ModelViewSet):
     """
     serializer_class = ReservaModelSerializer
     queryset = ReservaModel.objects.all()
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
 
 
 class ContatoModelViewSet(ModelViewSet):
@@ -21,6 +26,8 @@ class ContatoModelViewSet(ModelViewSet):
     """
     serializer_class = ContatoModelSerializer
     queryset = ContatoModel.objects.all()
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
  
 

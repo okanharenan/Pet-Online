@@ -4,6 +4,8 @@ body{
     background-position: 100px 80px;
     background-size: 100px;
     backface-visibility: hidden;
+    padding-left: 25% black;
+    padding-right: 25% black;
 }
 
 /* Estilos para telas médias e menores (ex: até 768px) */
@@ -38,6 +40,11 @@ form{
     padding: 10px;
     margin: 20px;
     transition: background-color 1s;
+}
+
+.menu{
+    display: block;
+    margin-left: 500px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
@@ -109,3 +116,33 @@ svg {
 }
 
 
+.etapas {
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: space-evenly;
+    height: 100vh; /* Ajuste a altura conforme necessário */
+}
+
+.menu {
+    list-style: none;
+    text-transform: uppercase;
+    padding: 10%;
+    margin-left: 0;
+    margin-top: 0;
+    text-align: center; /* Centralizar o texto horizontalmente */
+}
+
+.menu li {
+    display: block;
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 10px;
+    transition: background-color 1s;
+}
+
+.button-default{
+    display: flex;
+    flex-direction: column;
+    left: 400px;
+}

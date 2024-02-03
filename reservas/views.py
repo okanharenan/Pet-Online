@@ -12,8 +12,13 @@ def criar_reserva(request):
     else:
         form = ReservaForm()
 
+    
+    
     contexto = {
-        'form': form,
+        
+        'form' : form,
         'sucesso': sucesso
+        
     }
-    return render(request, 'reserva.html', contexto)
+
+    return render(request, 'contato.html', contexto)

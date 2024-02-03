@@ -1,23 +1,25 @@
-{%extends "inicio.html"%}
-{%load bootstrap5%}
+{% extends "inicio.html" %}
+{% load bootstrap5 %}
+{% block principal %}
+<link rel="stylesheet" href="/static/form.css">
 
-<main>
-    {% block principal %}
-    {% if sucesso %}
-    <p class="alert alert-success">Mensagem enviad com sucesso, em breve entraremos em contato</p>
-    {% else %}
-    <div class="container">
-        <div class="row d-flex  justify-content-center align-items-center mb-5 mt-5">
-            <div class="col-md-6">
-                <div>
-                    <h1 class="mt-3">Fale Conosco!</h1>
-                    <form action="" method="post" ></form> {% csrf_token %}
-                    {% bootstrap_form form %}
-                    <button type="submit" id="id_mensagem" class="btn btn-primary">Enviar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {%endif%}
-  {% endblock %}
-</main>
+{% if sucesso %}
+<p class="alert alert-success text-center mt-5">Agendamento concluido com sucesso, em breve entraremos em contato</p>
+
+{% else %}
+
+<form action="" method="post" novalidate > 
+  <div class="row d-flex justify-content-center">
+      <div class="col-md-6 ">
+          <div>
+            <h1 class="formulario mt-5">Enviar dúvidas</h1>
+              {% csrf_token %}
+              {% bootstrap_form form  %}
+              <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+          </div>
+      </div>
+  </div>
+
+</form>
+{% endif %}
+{% endblock %}

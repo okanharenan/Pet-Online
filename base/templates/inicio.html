@@ -44,7 +44,7 @@
     
     <h1 class="visually-hidden">Headers examples</h1>
 
-    <div class="container header">
+    <div class="container header mb-5">
       <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
@@ -52,11 +52,11 @@
         </a>
   
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{%url 'inicio'%}" class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Planos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Serviços</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contatos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
         </ul>
       </header>
     </div>
@@ -104,21 +104,13 @@
           </button>
         </div>
   </section>
-  <div><button class="btn btn-primary">Reservar agora</button></div>
-  <div>
-    <h1 class="text-center mb-0">Conheço as estapas dos nossos banhos</h1>
-    <section class="etapas">
-    <ul class="menu">
-      <li>Banho</li>
-      <li>Secagem</li>
-      <li>Escova</li>
-      <li>Linpeza de ouvidos</li>
-      <li>Corte das unhas</li>
-    </ul>
-    </section>
-  
+  <div class="container">
+    <div class="col text-center buttondefault">
+      <a href="{% url 'reserva:reserva' %}"><button type="button" class="btn btn-primary btn-lg">Agendar banho</button></a>
+      <a href="{% url 'contato' %}"><button type="button" class="btn btn-secondary btn-lg">Contato</button></a>
+    </div>
   </div>
-
+   
 </main>
 </div>
 {%endblock%}
@@ -128,7 +120,7 @@
     <p class="float-end mb-1">
      
     </p>
-    <p class="mb-1 text-center">Pet-Online  &copy; Última School Curso Python</p>
+    <p class="mb-1 align-items-center">Pet-Online  &copy; Última School Curso Python</p>
   </div>
 </footer>
 
