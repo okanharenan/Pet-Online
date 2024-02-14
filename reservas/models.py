@@ -1,3 +1,4 @@
+
 from django.db import models
 
 #modelo reservas
@@ -23,5 +24,26 @@ class ReservaModel(models.Model):
     turno = models.CharField(verbose_name="Turno", max_length=10, choices=TURNO)
     tamanho =models.IntegerField(verbose_name="Tamanho", choices = TAMANHO_PET)
     observacoes = models.TextField(verbose_name="Observações", blank=True)
+    petshop = models.ForeignKey('PetShop', 
+                                related_name="reservas",
+                                on_delete = models.CASCADE,
+                                blank=True,
+                                null= True,
+                                
+                                )
 
-  
+    def __str__(self):
+        return f'{self.nome}: {self.data}- {self.turno}'
+    
+    class Meta:
+        verbose_name = "Reserva de banho"
+        verbose_name_plural = "Reserva de banho"
+
+class PetShop(models.Model):
+    nome = models.CharField(verbose_name="Nome", max_length=50)
+    rua = models.CharField(verbose_name="Rua", max_length=100)
+    numero = models.CharField(verbose_name="Rua", max_length=10)
+    bairro = models.CharField(verbose_name="Bairro", max_length=50)
+
+    def qtd_reservas(self):
+        return self.reservas.count()

@@ -10,7 +10,7 @@ def marcar_como_lido(modeladmin, request, queryset):
 
 @admin.register(ContatoModel)
 class ContatoAdmin(admin.ModelAdmin):
-    list_display = ['nome', 'telefone', 'email', 'data' , 'lido']
+    list_display = ['id','nome', 'telefone', 'email', 'data' , 'lido']
     search_fields=['nome','telefone','email']
     list_filter=['data','lido']
     actions = [marcar_como_lido]
