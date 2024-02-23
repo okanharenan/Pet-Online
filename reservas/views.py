@@ -21,4 +21,4 @@ def criar_reserva(request):
         
     }
 
-    return render(request, 'contato.html', contexto)
+    return render(request, 'reserva.html', contexto)

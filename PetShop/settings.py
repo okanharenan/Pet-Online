@@ -114,7 +114,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'base', 'static')
+    BASE_DIR / 'base_style'
 ]
 
 MEDIA_ROOT = [os.path.join(BASE_DIR, 'templates')]
@@ -134,5 +134,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication'
-    ]
+    ],
 }
+  
+ 

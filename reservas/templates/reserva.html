@@ -4,22 +4,18 @@
 <link rel="stylesheet" href="/static/form.css">
 
 {% if sucesso %}
-<p class="alert alert-success">Agendamento concluido com sucesso, em breve entraremos em contato</p>
+<p class="alert alert-success" id="mensagem">Agendamento concluido com sucesso, em breve entraremos em contato</p>
 
 {% else %}
-
-<form action="" method="POST" novalidate > 
-  <div class="row d-flex justify-content-center">
-      <div class="col-md-6 ">
-          <div>
-            <h1 class="formulario mt-5">Formulario de reservas</h1>
-              {% csrf_token %}
-              {% bootstrap_form form  %}
-              <button type="submit" class="btn btn-primary">Reservar agora</button>
-          </div>
-      </div>
+<div class="principal d-flex justify-content-center mt-5">
+  <div class="forms">
+    <h1 class="mt-3"> Formúlario de reservas </h1>
+    <form action="" method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+    </form>
+    <button type="submit" class="btn btn-primary button-default">Reservar Banho</button>
   </div>
-
-</form>
+</div>
 {% endif %}
 {% endblock %}

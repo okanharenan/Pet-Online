@@ -1,9 +1,13 @@
 #from termios import CDSUSP
-from rest_framework.serializers import ModelSerializer, HyperlinkedRelatedField
-from rest_framework.serializers import PrimaryKeyRelatedField
 from reservas.models import ReservaModel, PetShop
 from base.models import ContatoModel
-from datetime import date
+import datetime
+from rest_framework.serializers import (
+    ModelSerializer,
+    HyperlinkedRelatedField,
+    PrimaryKeyRelatedField,
+    ValidationError
+)
 
 
 class PetShopRelatedFieldsCustomSerializer(PrimaryKeyRelatedField):
@@ -38,6 +42,14 @@ class ReservaModelSerializer(ModelSerializer):
         queryset=PetShop.objects.all(),
         read_only=False,
     )
+
+    def validate_data(self,value):
+        hoje = datetime.date.today()
+        if value < hoje:
+            ValidationError(f'{value} é uma data do passado, tente colocar uma data atual!')
+        return value
+
+
 
     class Meta:
         model = ReservaModel
