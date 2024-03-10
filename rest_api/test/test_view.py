@@ -30,7 +30,7 @@ class TestView:
         return baker.make('auth.User')
     
     @pytest.mark.django_db
-    def test_criar_agendamento(self, usuario, dados_agendamento):
+    def test_criar_agendamento(self,dados_agendamento, usuario):
         cliente = APIClient()
         cliente.force_authenticate(usuario)
         resposta = cliente.post('/Api/agendamento', dados_agendamento)

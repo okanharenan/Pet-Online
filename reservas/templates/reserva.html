@@ -10,11 +10,11 @@
 <div class="principal d-flex justify-content-center mt-5">
   <div class="forms">
     <h1 class="mt-3"> Formúlario de reservas </h1>
-    <form action="" method="post">
+    <form action="" method="post" novalidate>
       {% csrf_token %}
       {% bootstrap_form form %}
+      <button type="submit" class="btn btn-primary button-default">Reservar Banho</button>
     </form>
-    <button type="submit" class="btn btn-primary button-default">Reservar Banho</button>
   </div>
 </div>
 {% endif %}
