@@ -11,7 +11,7 @@ def dados_agendamento_errado():
     petshop = baker.make(PetShop)
     return {
         'nome': 'nome teste', 'email':'email@teste.com', 'nome_pet':'pet test',
-        'data': ontem, 'turno': 'Manhã', 'tamanho_pet':0, 'observacoes':'teste',
+        'data': ontem, 'turno': 'manha', 'tamanho_pet':0, 'observacoes':'teste',
         'petshop':petshop.pk,
     }
 

@@ -14,11 +14,6 @@ def Contato(request):
     if form.is_valid():
         form.save()
         sucesso = True
-
-    else:
-        form = ContatoForms()
-
-    
     
     contexto = {
         
@@ -28,3 +23,9 @@ def Contato(request):
     }
 
     return render(request, 'contato.html', contexto)
+
+def sobre(request):
+    return render(request,"sobre.html")
+
+def planos(request):
+    return render(request, "planos.html")

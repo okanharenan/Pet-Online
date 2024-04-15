@@ -5,14 +5,10 @@ from reservas.forms import ReservaForm
 def criar_reserva(request):
     sucesso = False
     form = ReservaForm(request.POST or None)
+    print
     if form.is_valid():
         form.save()
         sucesso = True
-
-    else:
-        form = ReservaForm()
-
-    
     
     contexto = {
         
